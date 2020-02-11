@@ -5,13 +5,12 @@
   <title>注册确认链接</title>
 </head>
 <body>
-  <h1>感谢您在 Weibo App 网站进行注册！</h1>
+  <h1>感谢您在 MuQ App 网站进行注册！</h1>
 
   <p>
     请点击下面的链接完成注册：
-    <a href="http://weibo.test/signup/confirm/eReVOhNyfg1jhgB2HbEfzy6QfVivyR">
-      http://weibo.test/signup/confirm/eReVOhNyfg1jhgB2HbEfzy6QfVivyR
-    </a>
+    <a href="{{ route('confirm_email', $user->activation_token) }}">
+      {{ route('confirm_email', $user->activation_token) }}
   </p>
 
   <p>

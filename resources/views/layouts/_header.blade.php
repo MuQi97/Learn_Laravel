@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container ">
-            <a class="navbar-brand" href="{{ route('home') }}">Weibo App</a>
+            <a class="navbar-brand" href="{{ route('home') }}">MuQ App</a>
             <ul class="navbar-nav justify-content-end">
                 @if (Auth::check())
                 <li class="nav-item"><a class="nav-link" href="{{ route('users.index') }}">用户列表</a></li>
