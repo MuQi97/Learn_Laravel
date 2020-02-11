@@ -18,7 +18,7 @@ function get_db_config()
             'host' => env('DB_HOST', 'localhost'),
             'database'  => env('DB_DATABASE', 'forge'),
             'username'  => env('DB_USERNAME', 'forge'),
-            'password'  => env('DB_PASSWORD', '1'),
+            'password'  => env('DB_PASSWORD', ''),
         ];
     }
 }
