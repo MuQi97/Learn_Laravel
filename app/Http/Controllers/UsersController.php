@@ -11,8 +11,8 @@ class UsersController extends Controller
     public function __construct()
     {
         //限制未登录用户访问数据修改页面
-        $this->middleware('auth', [            
-            'except' => ['show', 'create', 'store']
+        $this->middleware('auth', [
+            'except' => ['show', 'create', 'store', 'index']
         ]);
 
         //限制已登录用户访问注册页面
@@ -21,6 +21,11 @@ class UsersController extends Controller
         ]);
     }
 
+    public function index()
+    {
+        $users = User::paginate(10);
+        return view('users.index', compact('users'));
+    }
     public function create()
     {
         return view('users.create');
@@ -74,5 +79,13 @@ class UsersController extends Controller
 
         session()->flash('success', '个人资料更新成功！');
         return redirect()->route('users.show', $user);
+    }
+
+    public function destroy(User $user)
+    {
+        $this->authorize('destroy', $user);
+        $user->delete();
+        session()->flash('success', '成功删除用户！');
+        return back();
     }
 }
