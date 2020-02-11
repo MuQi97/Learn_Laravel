@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>@yield('title', 'MuQ App') - MuQ Demo</title>
-  <link rel="stylesheet" href="/css/app.css">
+    <title>@yield('title', 'MuQ App') - MuQ Demo</title>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   </head>
   <body>
 
